@@ -22,6 +22,7 @@ jobs:
     - run: ls sources/*
     - name: Run 'absolute_includes.py'
       run: |
+        mkdir output/
         cd sources/
         python3 ../absolute_includes.py nrfx/ ../output/ | tee ../output/log.txt
         cd ../
