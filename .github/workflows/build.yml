@@ -17,7 +17,7 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: 3.7
-    - run: rm -rf output/
+    - run: rm -rf output/ && mkdir output/
     - run: ls
     - run: ls sources/*
     - name: Run 'absolute_includes.py'
@@ -30,7 +30,7 @@ jobs:
         echo "## Final header files"                                >> output/README.md
         echo "This directory contains the processed header files"   >> output/README.md
         echo "that are ready to be #included.  "                    >> output/README.md
-        echo "Check `log.txt` for details on `#include` statements" >> output/README.md
+        echo "Check 'log.txt' for details on `#include` statements" >> output/README.md
         echo "referring to header files that were not found.  "     >> output/README.md
         echo ""                                                     >> output/README.md
         echo "#### Automated Build"                                 >> output/README.md
