@@ -1,4 +1,4 @@
-Opening nrfx/mdk/nrf5340_network.h -> ../output/nrfx/mdk/nrf5340_network.h
+Opening nrfx/mdk/nrf9160.h -> ../output/nrfx/mdk/nrf9160.h
     No files found for: core_cm33.h
 Opening nrfx/mdk/nrf5340_application.h -> ../output/nrfx/mdk/nrf5340_application.h
     No files found for: core_cm33.h
@@ -6,13 +6,13 @@ Opening cmsis/include/core_cmFunc.h -> ../output/cmsis/include/core_cmFunc.h
     No files found for: cmsis_iar.h
     No files found for: cmsis_ccs.h
     No files found for: cmsis_csm.h
-Opening nrfx/mdk/nrf9160.h -> ../output/nrfx/mdk/nrf9160.h
+Opening nrfx/mdk/nrf5340_network.h -> ../output/nrfx/mdk/nrf5340_network.h
     No files found for: core_cm33.h
-Opening cmsis/include/core_cmInstr.h -> ../output/cmsis/include/core_cmInstr.h
+Opening cmsis/include/core_cmSimd.h -> ../output/cmsis/include/core_cmSimd.h
     No files found for: cmsis_iar.h
     No files found for: cmsis_ccs.h
     No files found for: cmsis_csm.h
-Opening cmsis/include/core_cmSimd.h -> ../output/cmsis/include/core_cmSimd.h
+Opening cmsis/include/core_cmInstr.h -> ../output/cmsis/include/core_cmInstr.h
     No files found for: cmsis_iar.h
     No files found for: cmsis_ccs.h
     No files found for: cmsis_csm.h
