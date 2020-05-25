@@ -1,0 +1,9 @@
+[submodule "sources/nrfx"]
+	path = sources/nrfx
+	url = https://github.com/NordicSemiconductor/nrfx.git
+[submodule "sources/cmsis"]
+	path = sources/cmsis
+	url = https://github.com/iAmGroute/nrf_cmsis.git
+[submodule "sources/include"]
+	path = sources/include
+	url = https://github.com/iAmGroute/ses_include.git
