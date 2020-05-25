@@ -23,10 +23,20 @@ jobs:
     - name: Run 'absolute_includes.py'
       run: |
         cd sources/
-        python3 ../absolute_includes.py nrfx/ ../output/
+        python3 ../absolute_includes.py nrfx/ ../output/ | tee ../output/log.txt
         cd ../
+    - name: Add 'output/README.md'
+      run: |
+        echo "## Final header files"                                >> output/README.md
+        echo "This directory contains the processed header files"   >> output/README.md
+        echo "that are ready to be #included.  "                    >> output/README.md
+        echo "Check `log.txt` for details on `#include` statements" >> output/README.md
+        echo "referring to header files that were not found.  "     >> output/README.md
+        echo ""                                                     >> output/README.md
+        echo "#### Automated Build"                                 >> output/README.md
+        echo "Run ${GITHUB_RUN_ID}"                                 >> output/README.md
+        echo "Commit ${GITHUB_SHA}"                                 >> output/README.md
     - run: ls *
-    - run: zip -r nrfx_deps.zip output/
     - name: Commit files
       run: |
         git config --local user.email "action@github.com"
@@ -37,15 +47,16 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
+    - run: zip -r nrfx_deps.zip output/
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref }}
-        draft: false
+        tag_name: "auto_${{github.run_number}}_${{github.run_id}}_${{github.sha}}"
+        release_name: Automated release ${{ github.run_number }}
+        draft: true
         prerelease: false
     - name: Upload Release Asset
       id: upload-release-asset 
